@@ -22,7 +22,7 @@ When learning how to generate Credentials, Budget and Billing Alarm via CLI, I d
    
   ![Gitpod Commit Issue](![gitpod comit](https://user-images.githubusercontent.com/93460271/219847154-3e45694f-750e-4793-8fa4-c9db514acb7c.png)
    
-To fix that, I go back and watch the tutorial and re-do the whole thing from the beginning; that is the moment that I figure out that  I made mistake.  Lesson learned
+To fix that, I go back and watch the tutorial and re-do the whole thing from the beginning; that is the moment that I figure out that  I made mistake.  Lesson learned!!!
 
 From the video, I learned so much more information about the AWS CLI. I have never used the CLI before; therefore, this is a really good chance for me to know and learn about AWS.
 
