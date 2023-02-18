@@ -43,13 +43,13 @@ I would like to try to create Billing Alert using the AWS CLI through Gitpod.  I
 
 This is my first time I have used the CloudShell, I will definitely go to AWS document to read more and do some fun work about this feature
 
-### Recreate the Conceptual Diagram 
+### Recreate the Conceptual Design in Licud chart
 
-![Proof of Conceptual Diagram](![Conceptual Diagram](https://user-images.githubusercontent.com/93460271/219847072-e440688d-6931-4468-a4da-fa0c7d821281.png)
+![Proof of Conceptual Design](![Conceptual Diagram](https://user-images.githubusercontent.com/93460271/219847072-e440688d-6931-4468-a4da-fa0c7d821281.png)
 
 Before the bootcamp started, I was wondering that how can I draw the icons of the AWS.  I saw a lot of people that they drew the chart with pretty icons, but I have no idea how to draw the icons.  Then, when attending the bootcamp, I just learned that they use tools to draw those icons.  I am excited to play around on the Lucid.app
 
-### Logical Diagram in Lucid charts
+### Recreate Logical Design in Lucid chart
 
 Before the bootcamp started, I was wondering that how can I draw the icons of the AWS.  I saw a lot of people that they drew the chart with pretty icons, but I have no idea how to draw the icons.  Then, when attending the bootcamp, I just learned that they use tools to draw those icons.  I am excited to play around on the Lucid.app
 
