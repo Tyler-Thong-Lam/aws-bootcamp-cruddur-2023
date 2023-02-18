@@ -55,6 +55,8 @@ Before the bootcamp started, I was wondering that how can I draw the icons of th
 
 ![Proof of Logical Diagram](![Logical Diagram](https://user-images.githubusercontent.com/93460271/219848482-ba3f1af8-2183-49aa-9dbc-21323599b6fa.png)
 
+[Lucid charts Share Link](https://lucid.app/lucidchart/4cd7cc66-04b2-46a8-a8b9-168fbd504a1a/edit?viewport_loc=-372%2C-29%2C2994%2C1495%2CQIkxwmBpUK~h&invitationId=inv_e9954ac4-9ab9-4f8f-87a1-a387d3879541)
+
 ### Spend and Security Considerations
 
 I gain more knowledge about the Spend and Security Considerations, especially the Security Considerations.  Before watching Ashish's video, I just only use my Root User to access my account because I think my account is safe with the enabled MFA.  From now, I will use the IAM Account to access my account to be more secured.  
