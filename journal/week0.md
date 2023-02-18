@@ -65,3 +65,9 @@ I gain more knowledge about the Spend and Security Considerations, especially th
 For the Spend Considerations, I never know that AWS will start charging me money if I create more that two bugets in the account; I used to think that I can create as much budgets as I can inside the AWS account.  One more knowledge to gain in Week 0.  
 
 ### Homework Challenges 
+
+I will add API Gateway between Frontend and Backend application so we can monitor, manage, and secure the the APIs that comunicate between Frontend and Backend Application
+
+![Adding API Gateway](![Adding API Gateway](https://user-images.githubusercontent.com/93460271/219874401-5c24b8b1-1985-4824-b04f-a97db41659f8.png)
+
+
