@@ -45,9 +45,10 @@ This is my first time I have used the CloudShell, I will definitely go to AWS do
 
 ### Recreate the Conceptual Design in Licud chart
 
+Before the bootcamp started, I was wondering that how can I draw the icons of the AWS.  I saw a lot of people that they drew the chart with pretty icons, but I have no idea how to draw the icons.  Then, when attending the bootcamp, I just learned that they use tools to draw those icons.  I am excited to play around on the Lucid.app
 ![Proof of Conceptual Design](![Conceptual Diagram](https://user-images.githubusercontent.com/93460271/219847072-e440688d-6931-4468-a4da-fa0c7d821281.png)
 
-Before the bootcamp started, I was wondering that how can I draw the icons of the AWS.  I saw a lot of people that they drew the chart with pretty icons, but I have no idea how to draw the icons.  Then, when attending the bootcamp, I just learned that they use tools to draw those icons.  I am excited to play around on the Lucid.app
+[Lucid charts Shart Link_1](https://lucid.app/lucidchart/f8231132-794b-40e0-b079-91ffeb0e872f/edit?viewport_loc=-261%2C-76%2C2994%2C1495%2C0_0&invitationId=inv_a44879f7-9130-4512-9b2d-f449b2db1e4f)
 
 ### Recreate Logical Design in Lucid chart
 
@@ -55,7 +56,7 @@ Before the bootcamp started, I was wondering that how can I draw the icons of th
 
 ![Proof of Logical Diagram](![Logical Diagram](https://user-images.githubusercontent.com/93460271/219848482-ba3f1af8-2183-49aa-9dbc-21323599b6fa.png)
 
-[Lucid charts Share Link](https://lucid.app/lucidchart/4cd7cc66-04b2-46a8-a8b9-168fbd504a1a/edit?viewport_loc=-372%2C-29%2C2994%2C1495%2CQIkxwmBpUK~h&invitationId=inv_e9954ac4-9ab9-4f8f-87a1-a387d3879541)
+[Lucid charts Share Link_2](https://lucid.app/lucidchart/4cd7cc66-04b2-46a8-a8b9-168fbd504a1a/edit?viewport_loc=-372%2C-29%2C2994%2C1495%2CQIkxwmBpUK~h&invitationId=inv_e9954ac4-9ab9-4f8f-87a1-a387d3879541)
 
 ### Spend and Security Considerations
 
