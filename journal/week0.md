@@ -48,7 +48,10 @@ This is my first time I have used the CloudShell, I will definitely go to AWS do
 ![Proof of Conceptual Diagram](![Conceptual Diagram](https://user-images.githubusercontent.com/93460271/219847072-e440688d-6931-4468-a4da-fa0c7d821281.png)
 
 Before the bootcamp started, I was wondering that how can I draw the icons of the AWS.  I saw a lot of people that they drew the chart with pretty icons, but I have no idea how to draw the icons.  Then, when attending the bootcamp, I just learned that they use tools to draw those icons.  I am excited to play around on the Lucid.app
+
 ### Logical Diagram in Lucid charts
+
+Before the bootcamp started, I was wondering that how can I draw the icons of the AWS.  I saw a lot of people that they drew the chart with pretty icons, but I have no idea how to draw the icons.  Then, when attending the bootcamp, I just learned that they use tools to draw those icons.  I am excited to play around on the Lucid.app
 
 ![Proof of Logical Diagram](![Logical Diagram](https://user-images.githubusercontent.com/93460271/219847122-17262825-0f0c-481e-b06c-b2880a9ba6c5.png)
 
