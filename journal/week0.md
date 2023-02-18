@@ -72,4 +72,4 @@ I will add API Gateway between Frontend and Backend application so we can monito
 
 ![Adding API Gateway](![Adding API Gateway](https://user-images.githubusercontent.com/93460271/219874401-5c24b8b1-1985-4824-b04f-a97db41659f8.png)
 
-
+For this, I did not do much about the design due to lack of information (I am a beginer but no excuse!!!), but I will continue learning and try my best to be involved in the challenge as much as I can
