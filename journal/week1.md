@@ -54,7 +54,8 @@ aws dynamodb create-table \
 [Proof of image on DockerHub](![dockerhub_image](https://user-images.githubusercontent.com/93460271/221344867-3cbe4a72-3c51-484a-826a-7f0a8d5d31c0.png)
 
  Installing Docker on local
- ** Insert Image**
+ 
+ [](![docker_cmd](https://user-images.githubusercontent.com/93460271/221345454-5ca197b0-98d1-4d34-84c6-949bb336e933.png)
  
  [Window install](https://docs.docker.com/desktop/install/windows-install/)
  
