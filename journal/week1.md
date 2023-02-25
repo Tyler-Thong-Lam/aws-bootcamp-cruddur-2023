@@ -46,6 +46,13 @@ aws dynamodb create-table \
  
  ## Homework Challenge
  
+ ### Push and Tag image on DockerHub
+ 
+-After creating account in DockerHub, then push the image
+[Dockerhub Image](![dockerhub_code](https://user-images.githubusercontent.com/93460271/221344804-b5145983-8200-4daf-976f-ea20b24a8fa7.png)
+
+[Proof of image on DockerHub](![dockerhub_image](https://user-images.githubusercontent.com/93460271/221344867-3cbe4a72-3c51-484a-826a-7f0a8d5d31c0.png)
+
  Installing Docker on local
  ** Insert Image**
  
