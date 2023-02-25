@@ -1,8 +1,8 @@
 # Week 1 — App Containerization
 
-##Required Homework
+## Required Homework
 
-###Adding the Notification feature to our app
+### Adding the Notification feature to our app
 
 - Adding the notification's actitivy to the service
 - Adding the notification page in the frontend 
