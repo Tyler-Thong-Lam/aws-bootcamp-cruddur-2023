@@ -11,9 +11,6 @@
 ## Using Docker to launch multiple apps
 ## Adding DynamoDB and Postgres
 > - Testing DynamoDB
-> - Testing Postgres
-
-## Homework Challenge
 
 ```
 aws dynamodb create-table \
@@ -27,3 +24,5 @@ aws dynamodb create-table \
     --table-class STANDARD
     
     ```
+
+> - Testing Postgres
