@@ -12,11 +12,12 @@
 ### Creating Dockerfile for Frontend and Backend
 
 [Backend Dockerfile](https://github.com/Tyler-Thong-Lam/aws-bootcamp-cruddur-2023/blob/main/backend-flask/Dockerfile)
+
 [Frontend Dockerfile](https://github.com/Tyler-Thong-Lam/aws-bootcamp-cruddur-2023/blob/main/frontend-react-js/Dockerfile)
 
 ### Using Docker to launch multiple apps
 [Docker Compose](https://github.com/Tyler-Thong-Lam/aws-bootcamp-cruddur-2023/blob/main/docker-compose.yml)
-[Dockerfile](![docker](https://user-images.githubusercontent.com/93460271/221336016-eb897e8a-ad4c-49b7-8057-a259c18df187.png)
+[Docker_compose image](![docker](https://user-images.githubusercontent.com/93460271/221336016-eb897e8a-ad4c-49b7-8057-a259c18df187.png)
 
 ### Adding DynamoDB and Postgres
 
