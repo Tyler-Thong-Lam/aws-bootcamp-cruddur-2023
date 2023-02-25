@@ -2,7 +2,8 @@
 
 ## Adding the Notification feature to our app
 
->   -- Adding the notification 's actitivy to the service
+> - Adding the notification's actitivy to the service
+> - Adding the notification page in the frontend 
 
 ```
 aws dynamodb create-table \
