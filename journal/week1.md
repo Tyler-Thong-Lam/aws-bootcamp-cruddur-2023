@@ -2,7 +2,7 @@
 
 ## Adding the Notification feature to our app
 
-> - Adding the notification 's actitivy to the service
+>  Adding the notification 's actitivy to the service
 
 ```
 aws dynamodb create-table \
