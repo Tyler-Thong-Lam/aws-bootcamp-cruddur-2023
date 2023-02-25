@@ -56,5 +56,5 @@ aws dynamodb create-table \
  Installing Docker on local
  ** Insert Image**
  
- [Link to install](https://docs.docker.com/desktop/install/windows-install/)
+ [Window install](https://docs.docker.com/desktop/install/windows-install/)
  
