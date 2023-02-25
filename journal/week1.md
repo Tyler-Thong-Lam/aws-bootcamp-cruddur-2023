@@ -5,6 +5,7 @@
 > - Adding the notification's actitivy to the service
 > - Adding the notification page in the frontend 
 
+[Notification image](!![Notification_1](https://user-images.githubusercontent.com/93460271/221334911-cebb0119-4712-4090-82d7-15ab28859124.png)
 ```
 aws dynamodb create-table \
     --endpoint-url http://localhost:8000 \
