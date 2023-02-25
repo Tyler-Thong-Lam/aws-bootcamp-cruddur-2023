@@ -7,7 +7,7 @@
 - Adding the notification's actitivy to the service
 - Adding the notification page in the frontend 
 
-[Notification image](!![Notification_1](https://user-images.githubusercontent.com/93460271/221334911-cebb0119-4712-4090-82d7-15ab28859124.png)
+[Notification image](![Notification_1](https://user-images.githubusercontent.com/93460271/221334911-cebb0119-4712-4090-82d7-15ab28859124.png)
 
 ### Creating Dockerfile for Frontend and Backend
 
@@ -21,9 +21,13 @@
 
 ### Adding DynamoDB and Postgres
 
-**Insert image**
+[Docker Compose](https://github.com/Tyler-Thong-Lam/aws-bootcamp-cruddur-2023/blob/main/docker-compose.yml)
+[](![docker_postgres](https://user-images.githubusercontent.com/93460271/221336680-6d6de81d-10ec-4e23-88ce-9844a8c9977b.png)
+
 - Testing DynamoDB
-- 
+[DynamoDB Image](![dynamodb](https://user-images.githubusercontent.com/93460271/221336792-31c75183-f54f-4b95-ab83-c7f5b9b0c9d1.png)
+
+
 ```
 aws dynamodb create-table \
     --endpoint-url http://localhost:8000 \
@@ -35,6 +39,10 @@ aws dynamodb create-table \
     --provisioned-throughput ReadCapacityUnits=1,WriteCapacityUnits=1 \
     --table-class STANDARD
  ```
+
+- Testing Postgres
+[Postgres Image](![postgress](https://user-images.githubusercontent.com/93460271/221336948-81f59971-4b5d-4252-bb36-e64e8bd94031.png)
+
  
  ## Homework Challenge
  
