@@ -2,6 +2,8 @@
 
 ## Adding the Notification feature to our app
 
+> - Adding the notification 's actitivy to the service
+
 ```
 aws dynamodb create-table \
     --endpoint-url http://localhost:8000 \
