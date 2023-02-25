@@ -6,6 +6,15 @@
 > - Adding the notification page in the frontend 
 
 [Notification image](!![Notification_1](https://user-images.githubusercontent.com/93460271/221334911-cebb0119-4712-4090-82d7-15ab28859124.png)
+
+## Creating Dcokerfile for Frontend and Backend
+## Using Docker to launch multiple apps
+## Adding DynamoDB and Postgres
+> - Testing DynamoDB
+> - Testing Postgres
+
+## Homework Challenge
+
 ```
 aws dynamodb create-table \
     --endpoint-url http://localhost:8000 \
