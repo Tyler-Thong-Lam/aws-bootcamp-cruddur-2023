@@ -108,7 +108,8 @@ After following the instruction from the video, I can obseve the output of the r
 ### AWS X-ray
 
 With this service, We can analyze and debug the applications
-[](https://aws.amazon.com/xray/)
+
+[AWS X-ray](https://aws.amazon.com/xray/)
 
 
 
