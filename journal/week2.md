@@ -93,9 +93,7 @@ Set the env var in for ```docker-compose.yml```
       AWS_ACCESS_KEY_ID: "${AWS_ACCESS_KEY_ID}"
       AWS_SECRET_ACCESS_KEY: "${AWS_SECRET_ACCESS_KEY}"
 ```
-
-
-
+[CloudWatch](!![cloudwatch log2](https://user-images.githubusercontent.com/93460271/222882756-3f5cb3d4-5c24-49b4-8a44-8d42074cec77.png)
 
 
 
