@@ -112,6 +112,11 @@ With this service, We can analyze and debug the applications
 [AWS X-ray](https://aws.amazon.com/xray/)
 
 
+[AWS Xray Architecture](![aws xray architecture](https://user-images.githubusercontent.com/93460271/222883870-d3a6f0bd-e06e-47f3-b75c-8248673b2e30.png)
+
+[](https://docs.aws.amazon.com/xray/latest/devguide/aws-xray.html)
+
+
 
 
 
