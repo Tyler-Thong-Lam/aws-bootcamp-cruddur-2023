@@ -105,3 +105,18 @@ After following the instruction from the video, I can obseve the output of the r
 
 [Hello World-RollBar](![Rollbar-Helloworld](https://user-images.githubusercontent.com/93460271/222883459-7049ab91-870a-4941-9560-6a9883824d6e.png)
 
+### AWS X-ray
+
+With this service, We can analyze and debug the applications
+[](https://aws.amazon.com/xray/)
+
+
+
+
+
+
+
+
+
+
+
