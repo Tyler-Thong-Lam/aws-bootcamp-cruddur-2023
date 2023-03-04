@@ -117,7 +117,7 @@ With this service, We can analyze and debug the applications
 
 [Documentation](https://docs.aws.amazon.com/xray/latest/devguide/aws-xray.html)
 
-Add Deamon Service to ```Docker Compose```
+We add Deamon Service to ```Docker Compose```
 ```
  xray-daemon:
    image: "amazon/aws-xray-daemon"
@@ -130,7 +130,21 @@ Add Deamon Service to ```Docker Compose```
    ports:
      - 2000:2000/udp
   ```
-  
+ 
+We create X-Ray group
+
+```
+--group-name "Cruddur" \
+--filter-expression "service(\"$FLASK_ADDRESS\") ```
+```
+
+We create sampling rules :
+
+```aws xray create-sampling-rule --cli-input-json file://aws/json/xray.json```
+
+[](![aws xray traces](https://user-images.githubusercontent.com/93460271/222884066-9515a0ab-4722-45b4-8d68-7e585ed39d6a.png)
+
+[](![aws traces](https://user-images.githubusercontent.com/93460271/222884076-5f123b84-0fed-43ef-92e5-e94ad3c9bf2f.png)
   
 
 
