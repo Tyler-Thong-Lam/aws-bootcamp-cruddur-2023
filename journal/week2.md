@@ -93,10 +93,17 @@ Set the env var in for ```docker-compose.yml```
       AWS_ACCESS_KEY_ID: "${AWS_ACCESS_KEY_ID}"
       AWS_SECRET_ACCESS_KEY: "${AWS_SECRET_ACCESS_KEY}"
 ```
-[CloudWatch](!![cloudwatch log2](https://user-images.githubusercontent.com/93460271/222882756-3f5cb3d4-5c24-49b4-8a44-8d42074cec77.png)
+[CloudWatch](![cloudwatch log2](https://user-images.githubusercontent.com/93460271/222882756-3f5cb3d4-5c24-49b4-8a44-8d42074cec77.png)
 
+### RollBar
 
+For this, I learn the new thing that we can use this tool to track any bugs and monitor solution
 
+[Proof of RollBar](![rollbar ](https://user-images.githubusercontent.com/93460271/222883393-206bf57d-83e7-439a-a91b-e7b61f57a691.png)
+
+After following the instruction from the video, I can obseve the output of the roll bar 
+
+[Hello World-RollBar](![Rollbar-Helloworld](https://user-images.githubusercontent.com/93460271/222883459-7049ab91-870a-4941-9560-6a9883824d6e.png)
 
 
 
