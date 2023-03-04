@@ -3,9 +3,10 @@
 ## Observaility
 ## Distributed Tracing
 ###HoneyComb
-  
-   We will follow the instruction to install these files:
-   We will add these to the  ```requirements txt```
+
+We will follow the instruction to install these files:
+
+We will add these to the  ```requirements txt```
    
 ```
    from opentelemetry import trace
