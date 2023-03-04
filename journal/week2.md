@@ -142,6 +142,10 @@ We create sampling rules :
 
 ```aws xray create-sampling-rule --cli-input-json file://aws/json/xray.json```
 
+[X-ray_JSON](![xray json](https://user-images.githubusercontent.com/93460271/222884282-8f709598-a38b-4822-8dcc-dd05418d56c2.png)
+
+By following the instruction,
+
 [](![aws xray traces](https://user-images.githubusercontent.com/93460271/222884066-9515a0ab-4722-45b4-8d68-7e585ed39d6a.png)
 
 [](![aws traces](https://user-images.githubusercontent.com/93460271/222884076-5f123b84-0fed-43ef-92e5-e94ad3c9bf2f.png)
