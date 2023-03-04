@@ -117,8 +117,21 @@ With this service, We can analyze and debug the applications
 
 [Documentation](https://docs.aws.amazon.com/xray/latest/devguide/aws-xray.html)
 
-
-
+Add Deamon Service to ```Docker Compose```
+```
+ xray-daemon:
+   image: "amazon/aws-xray-daemon"
+   environment:
+     AWS_ACCESS_KEY_ID: "${AWS_ACCESS_KEY_ID}"
+     AWS_SECRET_ACCESS_KEY: "${AWS_SECRET_ACCESS_KEY}"
+     AWS_REGION: "us-east-1"
+   command:
+     - "xray -o -b xray-daemon:2000"
+   ports:
+     - 2000:2000/udp
+  ```
+  
+  
 
 
 
