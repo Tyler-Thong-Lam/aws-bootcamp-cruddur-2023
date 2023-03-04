@@ -97,23 +97,11 @@ Set the env var in for ```docker-compose.yml```
 
 ### RollBar
 
-For this, I learn the new thing that we can use this tool to track any bugs and monitor solution
+For this, I learn the new thing that we can use this tool to real time tracking and monitoring solution for developers
 
 [Proof of RollBar](![rollbar ](https://user-images.githubusercontent.com/93460271/222883393-206bf57d-83e7-439a-a91b-e7b61f57a691.png)
 
 After following the instruction from the video, I can obseve the output of the roll bar 
 
 [Hello World-RollBar](![Rollbar-Helloworld](https://user-images.githubusercontent.com/93460271/222883459-7049ab91-870a-4941-9560-6a9883824d6e.png)
-
-
-
-
-
-
-
-
-
-
-
-
 
