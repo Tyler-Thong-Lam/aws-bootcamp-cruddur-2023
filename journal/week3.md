@@ -58,6 +58,14 @@ We experience error when implementing the code in the Signin Page
  
 [Signin Error](![Signin Error](https://user-images.githubusercontent.com/93460271/224468626-98f0c7ad-2f4b-4d85-b666-f92f6b6afc17.png)
 
+However, We are able to fix the problem then we export better result 
+
+[After fixxing the error](![UI after signin](https://user-images.githubusercontent.com/93460271/224468730-716ce730-b0b1-418f-afd2-664d98de6062.png)
+
+
+## Implement Recovery Page
+
+[](![Cruddur reset code](https://user-images.githubusercontent.com/93460271/224468819-4be50642-5a52-4730-a222-e9262f134416.png)
 
 
 
