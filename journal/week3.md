@@ -42,6 +42,7 @@ Step 5:
 Initializing app client
 
 We need to pick a name and add it to the ``` App client name ```
+
 [Initialize app client](![initial app client](https://user-images.githubusercontent.com/93460271/224466842-6b8f6a5a-d907-467b-94f7-f517c5b8cccd.png)
 
 Step 6:  
