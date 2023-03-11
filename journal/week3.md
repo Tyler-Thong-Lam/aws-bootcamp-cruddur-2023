@@ -52,5 +52,12 @@ After reviewing the setting and completing, we will have the Cognito account
 
 [Example](![AWS Cognito email confirm](https://user-images.githubusercontent.com/93460271/224466945-7ad23fc3-e9ab-4089-b841-0354282981c0.png)
 
+## Implementing Signin Page, Signup Page, Confirnmation Page
+
+We experience error when implementing the code in the Signin Page
+ 
+[Signin Error](![Signin Error](https://user-images.githubusercontent.com/93460271/224468626-98f0c7ad-2f4b-4d85-b666-f92f6b6afc17.png)
+
+
 
 
