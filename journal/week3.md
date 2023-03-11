@@ -67,5 +67,10 @@ However, We are able to fix the problem then we export better result
 
 [](![Cruddur reset code](https://user-images.githubusercontent.com/93460271/224468819-4be50642-5a52-4730-a222-e9262f134416.png)
 
+We receive the verification email
+
+[Verification mail](![Verification Code](https://user-images.githubusercontent.com/93460271/224469110-72b5423a-c425-4068-931e-0aec1ab8a618.png)
+
+
 
 
