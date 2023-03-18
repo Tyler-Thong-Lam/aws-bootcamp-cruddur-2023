@@ -31,7 +31,7 @@ DELETE FROM table_name WHERE condition; -- Delete data from a table
 
 ```
 
-## 1 Provision RDS Instance - Setup Postgres via AWS CLI
+## Provision RDS Instance - Setup Postgres via AWS CLI
 
 ```
 aws rds create-db-instance \
