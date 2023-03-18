@@ -498,3 +498,18 @@ export GITPOD_IP=$(curl ifconfig.me)
 
 gp env GITPOD_IP=$(curl ifconfig.me)
 ```
+We need to create an inbound rule for Postgres (Port: 5432) and provide the GITPOD IP.
+
+We'll get the security group rule id to be able to modify it in in Gitpod.
+
+```bash
+export DB_SG_ID="sg-0b725ebab7e25635e"
+gp env DB_SG_ID="sg-0b725ebab7e25635e"
+export DB_SG_RULE_ID="sgr-070061bba156cfa88"
+gp env DB_SG_RULE_ID="sgr-070061bba156cfa88"
+```
+```bash
+aws ec2 modify-security-group-rules \
+    --group-id $DB_SG_ID \
+    --security-group-rules "SecurityGroupRuleId=$DB_SG_RULE_ID,SecurityGroupRule={Description=GITPOD,IpProtocol=tcp,FromPort=5432,ToPort=5432,CidrIpv4=$GITPOD_IP/32}"
+```    
