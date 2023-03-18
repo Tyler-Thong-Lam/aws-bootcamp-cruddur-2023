@@ -301,5 +301,23 @@ aws ec2 modify-security-group-rules \
 
 ## Installing Postgres Client
 
+Setting the env var in backend-flask application
+
+```python
+  backend-flask:
+    environment:
+      CONNECTION_URL: "${CONNECTION_URL}"   
+```
+
+Then we will add psycopg to text 
+
+```
+psycopg[binary]
+psycopg[pool]
+```
+
+```txt
+pip install -r requirements.txt
+```
 
 
