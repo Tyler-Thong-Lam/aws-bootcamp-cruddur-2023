@@ -61,7 +61,7 @@ Besides that,  if you would like to save the credit or tight on budget, you can 
 
 [Insert Image]()
 
-## 2 Create Database
+## Create Database
 
 Create folder ``` backend-flask/db ```
 
@@ -111,6 +111,195 @@ VALUES
   )
 ```
 
+## Bash Scripts
+
+Create db-create file ``` backend-flask/bin/db-create```
+
+``` bash
+
+#! /usr/bin/bash
+
+CYAN='\033[1;36m'
+NO_COLOR='\033[0m'
+LABEL="DB-CREATE"
+printf "${CYAN}== ${LABEL} ==${NO_COLOR}\n"
+
+
+NO_DB_CONNECTION_URL=$(sed 's/\/cruddur//g' <<<"$CONNECTION_URL")
+psql $NO_DB_CONNECTION_URL -c "create database cruddur;"
+
+```
+
+Create db-connect file ``` backend-flask/bin/db-connect```
+
+```bash
+#! /usr/bin/bash
+
+GREEN='\033[0;32m'
+RED='\033[0;31m'
+CYAN='\033[1;36m'
+NO_COLOR='\033[0m'
+LABEL="DB-CONNECT"
+printf "${CYAN}== ${LABEL} ==${NO_COLOR}\n"
+
+if [ "$1" = "prod" ]; then
+    printf "${GREEN}It's PRODUCTION!${NO_COLOR}\n"
+    CON_URL=$PROD_CONNECTION_URL
+else
+    printf "${RED}NOT PRODUCTION!${NO_COLOR}\n"
+    CON_URL=$CONNECTION_URL
+fi
+
+psql $CON_URL
+```
+
+Create db-drop file ``` backend-flask/bin/db-drop```
+
+```bash
+
+#! /usr/bin/bash
+
+CYAN='\033[1;36m'
+NO_COLOR='\033[0m'
+LABEL="DB-DROP"
+printf "${CYAN}== ${LABEL} ==${NO_COLOR}\n"
+
+NO_DB_CONNECTION_URL=$(sed 's/\/cruddur//g' <<<"$CONNECTION_URL")
+psql $NO_DB_CONNECTION_URL -c "DROP DATABASE cruddur;"
+```
+
+Create db-schema-load file ``` backend-flask/bin/db-schema-load```
+
+```bash
+
+#!/usr/bin/bash
+
+GREEN='\033[0;32m'
+RED='\033[0;31m'
+CYAN='\033[1;36m'
+NO_COLOR='\033[0m'
+LABEL="DB-SCHEMA-LOADED"
+printf "${CYAN}== ${LABEL} ==${NO_COLOR}\n"
+
+schema_path="$(realpath .)/db/schema.sql"
+echo $schema_path
+
+if [ "$1" = "prod" ]; then
+    printf "${GREEN}It's PRODUCTION!${NO_COLOR}\n"
+    CON_URL=$PROD_CONNECTION_URL
+else
+    printf "${RED}NOT PRODUCTION!${NO_COLOR}\n"
+    CON_URL=$CONNECTION_URL
+fi
+
+psql $CON_URL cruddur < $schema_path
+
+```
+
+Create db-seed file ``` backend-flask/bin/db-seed```
+
+```bash
+#!/usr/bin/bash
+
+GREEN='\033[0;32m'
+RED='\033[0;31m'
+CYAN='\033[1;36m'
+NO_COLOR='\033[0m'
+LABEL="DB-SEED"
+printf "${CYAN}== ${LABEL} ==${NO_COLOR}\n"
+
+seed_path="$(realpath .)/db/seed.sql"
+echo $seed_path
+
+if [ "$1" = "prod" ]; then
+    printf "${GREEN}It's PRODUCTION!${NO_COLOR}\n"
+    CON_URL=$PROD_CONNECTION_URL
+else
+    printf "${RED}NOT PRODUCTION!${NO_COLOR}\n"
+    CON_URL=$CONNECTION_URL
+fi
+
+psql $CON_URL cruddur < $seed_path
+```
+
+Create db-setup file ``` backend-flask/bin/db-setup```
+
+```bash
+#! /usr/bin/bash
+
+GREEN='\033[0;32m'
+RED='\033[0;31m'
+CYAN='\033[1;36m'
+NO_COLOR='\033[0m'
+LABEL="DB-SETUP"
+printf "${CYAN}== ${LABEL} ==${NO_COLOR}\n"
+
+bin_path="$(realpath .)/bin"
+ 
+source "$bin_path/db-drop"
+source "$bin_path/db-create"
+source "$bin_path/db-schema-load"
+source "$bin_path/db-seed"
+```
+
+Create db-session file ``` backend-flask/bin/db-session```
+
+```bash
+#! /usr/bin/bash
+
+GREEN='\033[0;32m'
+RED='\033[0;31m'
+CYAN='\033[1;36m'
+NO_COLOR='\033[0m'
+LABEL="DB-SESSIONS"
+printf "${CYAN}== ${LABEL} ==${NO_COLOR}\n"
+
+if [ "$1" = "prod" ]; then
+    printf "${GREEN}It's PRODUCTION!${NO_COLOR}\n"
+    CON_URL=$PROD_CONNECTION_URL
+else
+    printf "${RED}NOT PRODUCTION!${NO_COLOR}\n"
+    CON_URL=$CONNECTION_URL
+fi
+
+NO_DB_URL=$(sed 's/\/cruddur//g' <<<"$CON_URL")
+psql $NO_DB_URL -c "select pid as process_id, \
+       usename as user,  \
+       datname as db, \
+       client_addr, \
+       application_name as app,\
+       state \
+from pg_stat_activity;"
+```
+
+Create rds-update-sg-rule file ``` backend-flask/binrds-update-sg-rule```
+
+```bash
+#!/usr/bin/bash
+
+CYAN='\033[1;36m'
+NO_COLOR='\033[0m'
+LABEL="RDS-UPDATE-SG-RULE"
+printf "${CYAN}== ${LABEL} ==${NO_COLOR}\n"
+
+counter=0
+while ! aws ec2 describe-instances &> /dev/null
+do
+    printf "AWS CLI is not installed yet, waiting for ${counter} seconds...\n"
+    sleep 1
+    ((counter++))
+done
+
+aws ec2 modify-security-group-rules \
+    --group-id $DB_SG_ID \
+    --security-group-rules "SecurityGroupRuleId=$DB_SG_RULE_ID,SecurityGroupRule={Description=GITPOD,IpProtocol=tcp,FromPort=5432,ToPort=5432,CidrIpv4=$GITPOD_IP/32}"
+
+```
+
+[Insert Image of rds-update-sg-rule]()
+
+
+## Installing Postgres Client
 
 
 
