@@ -19,6 +19,7 @@ export default function HomeFeedPage() {
   const [replyActivity, setReplyActivity] = React.useState({});
   const [user, setUser] = React.useState(null);
   const dataFetchedRef = React.useRef(false);
+  
 
   const loadData = async () => {
     try {
@@ -40,6 +41,7 @@ export default function HomeFeedPage() {
     }
   };
 
+// check if we are authenicated
   const checkAuth = async () => {
     Auth.currentAuthenticatedUser({
       // Optional, By default is false. 
@@ -58,7 +60,7 @@ export default function HomeFeedPage() {
     })
     .catch((err) => console.log(err));
   };
-  
+
   React.useEffect(()=>{
     //prevents double call
     if (dataFetchedRef.current) return;
@@ -72,25 +74,25 @@ export default function HomeFeedPage() {
     <article>
       <DesktopNavigation user={user} active={'home'} setPopped={setPopped} />
       <div className='content'>
-        <ActivityForm
-          user_handle={user}
-          popped={popped}
-          setPopped={setPopped}
-          setActivities={setActivities}
-        />
-        <ReplyForm 
+      <ActivityForm
+        user_handle={user}
+        popped={popped}
+        setPopped={setPopped}
+        setActivities={setActivities}
+      />
+      <ReplyForm 
           activity={replyActivity} 
           popped={poppedReply} 
           setPopped={setPoppedReply} 
           setActivities={setActivities} 
           activities={activities} 
-        />
-        <ActivityFeed 
+      />
+      <ActivityFeed 
           title="Home" 
           setReplyActivity={setReplyActivity} 
           setPopped={setPoppedReply} 
           activities={activities} 
-        />
+      />
       </div>
       <DesktopSidebar user={user} />
     </article>
