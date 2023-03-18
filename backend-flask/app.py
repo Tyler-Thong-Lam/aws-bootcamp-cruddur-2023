@@ -2,6 +2,9 @@ from flask import Flask
 from flask import request
 from flask_cors import CORS, cross_origin
 import os
+import sys
+import logging
+
 
 from services.home_activities import *
 from services.notifications_activities import *
@@ -16,73 +19,72 @@ from services.show_activity import *
 
 from lib.cognito_jwt_token import CognitoJwtToken, extract_access_token, TokenVerifyError
 
-# HoneyComb -----------
+#HONEYCOMB ---------------------------------------------------
 from opentelemetry import trace
 from opentelemetry.instrumentation.flask import FlaskInstrumentor
 from opentelemetry.instrumentation.requests import RequestsInstrumentor
 from opentelemetry.exporter.otlp.proto.http.trace_exporter import OTLPSpanExporter
 from opentelemetry.sdk.trace import TracerProvider
-from opentelemetry.sdk.trace.export import BatchSpanProcessor
-from opentelemetry.sdk.trace.export import ConsoleSpanExporter, SimpleSpanProcessor
+from opentelemetry.sdk.trace.export import BatchSpanProcessor,ConsoleSpanExporter,SimpleSpanProcessor
 
-# X-ray-----------
+#AWS X-RAY  -----------------------------------
 from aws_xray_sdk.core import xray_recorder
 from aws_xray_sdk.ext.flask.middleware import XRayMiddleware
+xray_url = os.getenv("AWS_XRAY_URL")
+xray_recorder.configure(service='backend-flask', dynamic_naming=xray_url)
 
-#CloudWatch Logs---
-import watchtower
-import logging
-from time import strftime
 
-# Rollbar-----
+#rollbar
 import os
 import rollbar
 import rollbar.contrib.flask
 from flask import got_request_exception
 
+#import watchlog Cloudwatch
+import watchtower
+import logging
+from time import strftime
+
+
 # Configuring Logger to Use CloudWatch
-# LOGGER = logging.getLogger(__name__)
-# LOGGER.setLevel(logging.DEBUG)
-# console_handler = logging.StreamHandler()
-# cw_handler = watchtower.CloudWatchLogHandler(log_group='cruddur')
-# LOGGER.addHandler(console_handler)
-# LOGGER.addHandler(cw_handler)
-#LOGGER.info("some message")
-# LOGGER.info("test log")
+LOGGER = logging.getLogger(__name__)
+LOGGER.setLevel(logging.DEBUG)
+console_handler = logging.StreamHandler()
+cw_handler = watchtower.CloudWatchLogHandler(log_group='cruddur')
+LOGGER.addHandler(console_handler)
+LOGGER.addHandler(cw_handler)
+LOGGER.info('test-log')
+ 
 
-# HoneyComb -----------
+#HONEYCOMB ---------------------------------------------------
 # Initialize tracing and an exporter that can send data to Honeycomb
-provider = TracerProvider()
-processor = BatchSpanProcessor(OTLPSpanExporter())
-provider.add_span_processor(processor)
+# provider = TracerProvider()
+# processor = BatchSpanProcessor(OTLPSpanExporter())
+# provider.add_span_processor(processor)
+# #trace logs in console
+# simple_processor = SimpleSpanProcessor(ConsoleSpanExporter())
+# provider.add_span_processor(simple_processor)
 
-# X-ray-----------
-xray_url = os.getenv("AWS_XRAY_URL")
-xray_recorder.configure(service='backend-flask', dynamic_naming=xray_url)
 
-# Show this in the logs within the backend-flask app STDOUT)
-#simple_processor = SimpleSpanProcessor(ConsoleSpanExporter())
-#provider.add_span_processor(simple_processor)
-
-trace.set_tracer_provider(provider)
-tracer = trace.get_tracer(__name__)
+# trace.set_tracer_provider(provider)
+# tracer = trace.get_tracer(__name__)
+ 
 
 app = Flask(__name__)
 
 cognito_jwt_token = CognitoJwtToken(
-  user_pool_id=os.getenv("AWS_COGNITO_USER_POOL_ID"),
-  user_pool_client_id=os.getenv("AWS_COGNITO_USER_POOL_CLIENT_ID"), 
+  user_pool_id=os.getenv("AWS_COGNITO_USER_POOL_ID"), 
+  user_pool_client_id=os.getenv("AWS_COGNITO_USER_POOL_CLIENT_ID"),
   region=os.getenv("AWS_DEFAULT_REGION")
 )
 
-# X-ray-----------
-XRayMiddleware(app, xray_recorder)
-
-# HoneyComb -----------
+#honeycomb
 # Initialize automatic instrumentation with Flask
-FlaskInstrumentor().instrument_app(app)
-RequestsInstrumentor().instrument()
+# FlaskInstrumentor().instrument_app(app)
+# RequestsInstrumentor().instrument()
 
+#AWS_XRAY APP
+XRayMiddleware(app, xray_recorder)
 
 frontend = os.getenv('FRONTEND_URL')
 backend = os.getenv('BACKEND_URL')
@@ -94,14 +96,14 @@ cors = CORS(
   expose_headers='Authorization',
   methods="OPTIONS,GET,HEAD,POST"
 )
+#CLOUDWATCH
+@app.after_request
+def after_request(response):
+    timestamp = strftime('[%Y-%b-%d %H:%M]')
+    LOGGER.error('%s %s %s %s %s %s', timestamp, request.remote_addr, request.method, request.scheme, request.full_path, response.status)
+    return response
 
-#@app.after_request
-#def after_request(response):
-#    timestamp = strftime('[%Y-%b-%d %H:%M]')
-#    LOGGER.error('%s %s %s %s %s %s', timestamp, request.remote_addr, request.method, request.scheme, request.full_path, response.status)
-#    return response
-
-# Rollbar-------
+#ROLLBAR
 rollbar_access_token = os.getenv('ROLLBAR_ACCESS_TOKEN')
 @app.before_first_request
 def init_rollbar():
@@ -119,10 +121,11 @@ def init_rollbar():
     # send exceptions from `app` to rollbar, using flask's signal system.
     got_request_exception.connect(rollbar.contrib.flask.report_exception, app)
 
+
 @app.route('/rollbar/test')
 def rollbar_test():
-    rollbar.report_message('Hello World!', 'warning')
-    return "Hello World!"
+    rollbar.report_message('Hello World! This is ttornike1991 trace log', 'warning')
+    return "Hello World! "   
 
 @app.route("/api/message_groups", methods=['GET'])
 def data_message_groups():
@@ -165,15 +168,11 @@ def data_home():
   access_token = extract_access_token(request.headers)
   try:
     claims = cognito_jwt_token.verify(access_token)
-    # Authenticated request
-    app.logger.debug("authenicated")
-    app.logger.debug(claims)
-    app.logger.debug(claims['username'])
+    # authenicatied request
     data = HomeActivities.run(cognito_user_id=claims['username'])
   except TokenVerifyError as e:
-    # Unauthenticated request
-    app.logger.debug(e)
-    app.logger.debug("unauthenicated")
+    # unauthenicatied request
+    print("An error occurred:", str(e))
     data = HomeActivities.run()
   return data, 200
 
@@ -204,7 +203,7 @@ def data_search():
 @app.route("/api/activities", methods=['POST','OPTIONS'])
 @cross_origin()
 def data_activities():
-  user_handle  = 'andrewbrown'
+  user_handle  = request.json['user_handle']
   message = request.json['message']
   ttl = request.json['ttl']
   model = CreateActivity.run(message, user_handle, ttl)
@@ -213,6 +212,7 @@ def data_activities():
   else:
     return model['data'], 200
   return
+
 
 @app.route("/api/activities/<string:activity_uuid>", methods=['GET'])
 @xray_recorder.capture('activities_show')
