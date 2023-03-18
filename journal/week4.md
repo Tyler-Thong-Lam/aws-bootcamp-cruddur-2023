@@ -59,7 +59,7 @@ With this setup, it will take us 15 minutes to create the instance
 
 Besides that,  if you would like to save the credit or tight on budget, you can temporarily stop the instace from the AWS console 
 
-[Insert Image]()
+[Cruddur image](!![cruddur instance](https://user-images.githubusercontent.com/93460271/226088652-388c7aa9-a49a-4651-b4b7-29cdec66b1b0.png)
 
 ## Create Database
 
