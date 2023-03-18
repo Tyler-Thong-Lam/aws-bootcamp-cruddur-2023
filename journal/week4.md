@@ -573,7 +573,7 @@ functions:
       - arn:aws:lambda:sa-east-1:898466741470:layer:psycopg2-py38:1
 ```
 
-[Link for choosing ARN](https://github.com/jetbridge/psycopg2-lambda-layer)
+[Link for choosing Lambda Layer depencing on Region](https://github.com/jetbridge/psycopg2-lambda-layer)
 
 Creating the file ```cruddur-post-confirmation.py``` in ```aws/lambdas```
 
