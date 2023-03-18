@@ -575,3 +575,12 @@ functions:
 
 [Link for choosing ARN](https://github.com/jetbridge/psycopg2-lambda-layer)
 
+Creating the file 
+```py
+cruddur-post-confirmation.py
+```
+in ```aws/lambdas```
+
+In ```py cruddur-post-confirmation.py```
+
+
