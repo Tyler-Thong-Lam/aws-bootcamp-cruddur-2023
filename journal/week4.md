@@ -631,7 +631,8 @@ def lambda_handler(event, context):
 
 We need to edit VPC components for lambda configuration
 
-[Image]()
+[Image](!![vpc edit](https://user-images.githubusercontent.com/93460271/226088387-14f21e98-90a9-481b-8c00-909b0bd57774.png)
+
 
 We also add ```Permissions``` to that function, for that we have to make new ```AWS Policy``` and attache it to the ```AWS Role```
 
