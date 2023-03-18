@@ -575,12 +575,85 @@ functions:
 
 [Link for choosing ARN](https://github.com/jetbridge/psycopg2-lambda-layer)
 
-Creating the file 
+Creating the file ```cruddur-post-confirmation.py``` in ```aws/lambdas```
+
+In ``` cruddur-post-confirmation.py```
+
 ```py
-cruddur-post-confirmation.py
+
+import json
+import psycopg2
+import os
+
+def lambda_handler(event, context):
+    user = event['request']['userAttributes']
+    print('userAttributes')
+    print(user)
+
+    user_display_name  = user['name']
+    user_email         = user['email']
+    user_handle        = user['preferred_username']
+    user_cognito_id    = user['sub']
+    try:
+      print('entered-try')
+      
+      sql = f"""
+         INSERT INTO public.users (
+          display_name, 
+          email,
+          handle, 
+          cognito_user_id
+          ) 
+        VALUES(%s,%s,%s,%s)
+      """
+      print('SQL Statement ----')
+      print(sql)
+      conn = psycopg2.connect(os.getenv('CONNECTION_URL'))
+      cur = conn.cursor()
+      params = [
+        user_display_name,
+        user_email,
+        user_handle,
+        user_cognito_id
+      ]
+      cur.execute(sql,*params)
+      conn.commit() 
+
+    except (Exception, psycopg2.DatabaseError) as error:
+      print(error)
+    finally:
+      if conn is not None:
+          cur.close()
+          conn.close()
+          print('Database connection closed.')
+    return event
 ```
-in ```aws/lambdas```
 
-In ```py cruddur-post-confirmation.py```
+We need to edit VPC components for lambda configuration
 
+[Image]()
 
+We also add ```Permissions``` to that function, for that we have to make new ```AWS Policy``` and attache it to the ```AWS Role```
+
+```json
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ec2:DescribeNetworkInterfaces",
+                "ec2:CreateNetworkInterface",
+                "ec2:DeleteNetworkInterface",
+                "ec2:DescribeInstances",
+                "ec2:AttachNetworkInterface"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
+
+```
+
+[](![json](https://user-images.githubusercontent.com/93460271/226087807-28362828-dec6-4b61-9b8c-a6d5842d4962.png)
