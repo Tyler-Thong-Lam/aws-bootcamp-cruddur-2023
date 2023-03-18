@@ -193,8 +193,8 @@ else
 fi
 
 psql $CON_URL cruddur < $schema_path
-
 ```
+[](!![db schema](https://user-images.githubusercontent.com/93460271/226088553-51268695-a9b3-418f-8da7-dde2d70bd44e.png)
 
 Create db-seed file ``` backend-flask/bin/db-seed```
 
@@ -221,6 +221,7 @@ fi
 
 psql $CON_URL cruddur < $seed_path
 ```
+[](!![seed data](https://user-images.githubusercontent.com/93460271/226088537-d1208b69-4240-4ceb-a4ce-36834dd468b2.png)
 
 Create db-setup file ``` backend-flask/bin/db-setup```
 
@@ -241,6 +242,7 @@ source "$bin_path/db-create"
 source "$bin_path/db-schema-load"
 source "$bin_path/db-seed"
 ```
+[db-setup](!![db-setup](https://user-images.githubusercontent.com/93460271/226088525-6bc17100-52ae-40e1-b438-096e547051e2.png)
 
 Create db-session file ``` backend-flask/bin/db-session```
 
@@ -272,6 +274,8 @@ psql $NO_DB_URL -c "select pid as process_id, \
 from pg_stat_activity;"
 ```
 
+[db-session](!![db-sessions](https://user-images.githubusercontent.com/93460271/226088511-737ec33d-2e24-4f81-b877-22c3bdbda56b.png)
+
 Create rds-update-sg-rule file ``` backend-flask/binrds-update-sg-rule```
 
 ```bash
@@ -295,9 +299,6 @@ aws ec2 modify-security-group-rules \
     --security-group-rules "SecurityGroupRuleId=$DB_SG_RULE_ID,SecurityGroupRule={Description=GITPOD,IpProtocol=tcp,FromPort=5432,ToPort=5432,CidrIpv4=$GITPOD_IP/32}"
 
 ```
-
-[Insert Image of rds-update-sg-rule]()
-
 
 ## Installing Postgres Client
 
