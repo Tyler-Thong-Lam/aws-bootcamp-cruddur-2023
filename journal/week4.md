@@ -491,7 +491,7 @@ class HomeActivities:
 
 ## Connection RDS by GITPOD
 
-```py
+```bash
 GITPOD_IP=$(curl ifconfig.me)
 
 export GITPOD_IP=$(curl ifconfig.me)
