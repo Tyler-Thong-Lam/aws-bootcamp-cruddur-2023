@@ -239,3 +239,4 @@ for i in range(len(lines)):
     my_user_uuid=users[key]['uuid'],
     my_user_display_name=users[key]['display_name'],
     my_user_handle=users[key]['handle']
+  )
