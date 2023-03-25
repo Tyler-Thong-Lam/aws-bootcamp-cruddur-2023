@@ -82,8 +82,7 @@ def lambda_handler(event, context):
         }
       )
       print("CREATE ===>",response)
-      
-      ```
+```
 
 
 
