@@ -29,7 +29,9 @@ DynamoDB Stream
 ### Pattern D-Updating message group
 
 
-### DynamoDB Stream
+## DynamoDB Stream
+
+Implementing DynamoDB stream by following the guided video and the code below
 
 ```py
 import json
@@ -83,6 +85,3 @@ def lambda_handler(event, context):
       )
       print("CREATE ===>",response)
 ```
-
-
-
